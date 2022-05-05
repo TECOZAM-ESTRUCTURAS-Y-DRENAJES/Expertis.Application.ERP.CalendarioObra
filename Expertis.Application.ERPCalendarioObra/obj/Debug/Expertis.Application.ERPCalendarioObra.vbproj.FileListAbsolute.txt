@@ -1,0 +1,21 @@
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.dll
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.pdb
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.xml
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\ResolveAssemblyReference.cache
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.CalendarioObra.resources
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.Resources.resources
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERPCalendarioObra.vbproj.GenerateResource.Cache
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERP.CalendarioObra.dll
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERP.CalendarioObra.xml
+U:\DESARROLLOS EXPERTIS 5 R2\Tecozam\FTecozam R2\Application\Expertis.Application.ERPCalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERP.CalendarioObra.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.CalendarioObra.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.frmHistoricoCalendario.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.Resources.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERPCalendarioObra.vbproj.GenerateResource.Cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERP.CalendarioObra.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERP.CalendarioObra.xml
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Expertis.Application.ERP.CalendarioObra.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.frmObservaciones.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.importarExcel.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Debug\Solmicro.Expertis.Application.ERP.CalendarioObra.frmBorrarHr.resources

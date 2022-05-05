@@ -1,0 +1,46 @@
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Application.ERP.CalendarioObra.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Application.ERP.CalendarioObra.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Application.ERP.CalendarioObra.xml
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.BusinessEnum.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.ClasesTecozam.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.General.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Negocio.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Obra.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Engine.UI.Design.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Rules.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.SEPA.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Ficheros.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Application.ERP.SEPA.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Financiero.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.SepaSrv.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\office.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Mnto.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.CRM.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Bodega.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.EMCS.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Application.ERP.CommonClasses.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Microsoft.Vbe.Interop.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.General.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Application.ERP.CommonClasses.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.ClasesTecozam.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.ClasesTecozam.xml
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.Obra.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.General.XmlSerializers.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Business.EMCS.XmlSerializers.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\ResolveAssemblyReference.cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.CalendarioObra.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.frmHistoricoCalendario.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.frmObservaciones.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.importarExcel.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.Resources.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERPCalendarioObra.vbproj.GenerateResource.Cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERP.CalendarioObra.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERP.CalendarioObra.xml
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERP.CalendarioObra.pdb
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\log4net.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\bin\Release\Expertis.Engine.OraDAL.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.frmBorrarHr.resources
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.dll
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.pdb
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.xml
