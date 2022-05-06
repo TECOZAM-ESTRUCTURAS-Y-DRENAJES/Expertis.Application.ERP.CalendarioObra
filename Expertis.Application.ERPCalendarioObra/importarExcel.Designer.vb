@@ -106,11 +106,12 @@ Partial Class importarExcel
         'borrahoras
         '
         Me.borrahoras.Icon = CType(resources.GetObject("borrahoras.Icon"), System.Drawing.Icon)
-        Me.borrahoras.Location = New System.Drawing.Point(400, 296)
+        Me.borrahoras.Location = New System.Drawing.Point(191, 381)
         Me.borrahoras.Name = "borrahoras"
         Me.borrahoras.Size = New System.Drawing.Size(165, 38)
         Me.borrahoras.TabIndex = 5
         Me.borrahoras.Text = "Borrar(Por App y por Excel)"
+        Me.borrahoras.Visible = False
         '
         'CD
         '
@@ -119,7 +120,7 @@ Partial Class importarExcel
         'bBorrarExcel
         '
         Me.bBorrarExcel.Icon = CType(resources.GetObject("bBorrarExcel.Icon"), System.Drawing.Icon)
-        Me.bBorrarExcel.Location = New System.Drawing.Point(400, 381)
+        Me.bBorrarExcel.Location = New System.Drawing.Point(405, 296)
         Me.bBorrarExcel.Name = "bBorrarExcel"
         Me.bBorrarExcel.Size = New System.Drawing.Size(165, 38)
         Me.bBorrarExcel.TabIndex = 6

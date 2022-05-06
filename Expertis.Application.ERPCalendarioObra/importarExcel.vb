@@ -532,14 +532,20 @@ TratarError:
             rsOperario = obj.Filter(f, , "Jornada_Laboral, c_h_n, c_h_x, c_h_e")
 
             'Compruebo en el calendario
-            txtSQL = "Select * from tbCalendarioCentro where idcentro='" & numero & "' and Fecha='" & Fecha & "' and tipodia=1"
+            'txtSQL = "Select * from tbCalendarioCentro where idcentro='" & numero & "' and Fecha='" & Fecha & "' and tipodia=1"
             'rsCalendarioCentro = Conexion.Execute(txtSQL)
             Dim calendario As New General.CalendarioCentro
             Dim filtro As New Filter
+            'Se pone por defecto 100. Para que no haga falta crear el calendario centro siempre que se cree obra.
+            '100 es vegas altas. Para que no haya errores.David velasco 06/05/22
+            'Antes ponia numero en vez de vegas
+            Dim vegas As String
+            vegas = "100"
             filtro.Add("Fecha", FilterOperator.Equal, Fecha)
-            filtro.Add("IDCentro", FilterOperator.Equal, numero)
+            filtro.Add("IDCentro", FilterOperator.Equal, vegas)
             filtro.Add("TipoDia", FilterOperator.Equal, 1)
-            rsCalendarioCentro = calendario.Filter(filtro)
+
+            rsCalendarioCentro = New BE.DataEngine().Filter("tbCalendarioCentro", filtro)
 
             'David 15/11/21 En vez de <>0 ponia "=0"
             'Si tiene datos es que es festivo
@@ -721,12 +727,34 @@ TratarError:
             Dim auto As New OperarioCalendario
             auto.BorraDatosObraMODControlPorFechaInicio(idobra, fechaDesde, fechaHasta)
 
-            'End If
-            'Else
-            'MsgBox("Datos incorrectos o el registro no existe. Ej sintaxis. num Obra:50032, Fecha Desde: 21/10/06, Fecha Hasta: 20/11/06")
         End If
 
         'End If
     End Sub
 
+    Private Sub bBorrarExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bBorrarExcel.Click
+        Dim numobra As String
+        Dim fechaDesde As String
+        Dim fechaHasta As String
+        Dim bSQL As String
+
+        bSQL = Nothing
+
+        numobra = InputBox("Introduzca Numero de obra", "Introduzca Datos:")
+        fechaDesde = InputBox("Introduzca Fecha Inicio(dd/mm/aa).", "Introduzca Datos: ")
+        fechaHasta = InputBox("Introduzca Fecha Fin(dd/mm/aa).", "Introduzca Datos:")
+
+        If numobra = "" Or fechaDesde = "" Or fechaHasta = "" Then
+            MsgBox("Introduzca Datos.")
+        Else
+            'Comentado por David Velasco 21/3
+            Dim sql As String
+            sql = numobra & " " & fechaDesde & " - " & fechaHasta
+            Dim auto As New OperarioCalendario
+            auto.BorraDatosObraMODControl(sql)
+
+        End If
+
+        'End If
+    End Sub
 End Class
