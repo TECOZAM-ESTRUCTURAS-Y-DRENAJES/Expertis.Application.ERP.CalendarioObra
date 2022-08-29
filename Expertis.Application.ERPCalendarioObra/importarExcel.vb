@@ -183,7 +183,7 @@ TratarError:
         Dim idtrab As String
         idtrab = rs(0)("IDTrabajo").ToString
 
-        If rs.Rows.Count <> 1 Then
+        If rs.Rows.Count > 2 Then
             MsgBox("Ya hay datos insertados para este parte. Se cancela la importacion", vbCritical + vbOKOnly)
             sNombreUnicoGlobal = ""
             rs = Nothing
