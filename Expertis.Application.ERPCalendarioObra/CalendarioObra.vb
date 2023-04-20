@@ -2072,6 +2072,7 @@ Public Class CalendarioObra
     End Sub
 
     Private Sub btnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar.Click
+        btnGuardar.Enabled = False
         If txtNAnticipo.Text < 0 Then
             'solo avisa que el campo nomina anticipo es negativo pero guarda la valoracion
             Guardar()
@@ -2081,7 +2082,7 @@ Public Class CalendarioObra
             Guardar()
             'btnAceptar_Click(1, e)
         End If
-
+        btnGuardar.Enabled = True
     End Sub
 
     Private Sub btnComentario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnComentario.Click
