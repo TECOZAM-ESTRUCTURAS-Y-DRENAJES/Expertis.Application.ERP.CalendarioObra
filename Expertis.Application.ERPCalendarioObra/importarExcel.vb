@@ -11,11 +11,14 @@ Imports Solmicro.Expertis.Engine
 Imports Solmicro.Expertis.Business.General
 Imports Solmicro.Expertis.Business.ClasesTecozam
 Imports Solmicro.Expertis.Business
+Imports System.Data.SqlClient
 
 Public Class importarExcel
 
     Inherits Solmicro.Expertis.Engine.UI.FormBase
     Private Declare Function CopyFile Lib "kernel32" Alias "CopyFileA" (ByVal lpExistingFileName As String, ByVal lpNewFileName As String, ByVal bFailIfExists As Long) As Long
+
+    Dim aux As Business.ClasesTecozam.MetodosAuxiliares
 
     Private Sub importarexcel_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         On Error GoTo TratarError
@@ -220,6 +223,8 @@ TratarError:
 
                 If Length(drHora(0)) > 0 Then
                     idOperario = drHora(0)
+
+
                     Windows.Forms.Application.DoEvents()
                     LProgreso.Text = "Importando : " & idOperario & " - " & fecha
                     Windows.Forms.Application.DoEvents()
@@ -256,10 +261,23 @@ TratarError:
 
         End While
         If (PvProgreso.Value.Equals(dtFecha.Columns.Count - 1)) Then
-            MsgBox("Se han insertado las " & cont & " filas correctamente.")
+            MsgBox("Se han insertado las filas correctamente.")
         End If
 
     End Sub
+
+    Public Function DevuelveIDCategoriaProfesionalSCCP(ByVal IDOperario As String) As Integer
+        Dim dt As New DataTable
+        Dim f As New Filter
+
+        f.Add("IDOperario", FilterOperator.Equal, IDOperario)
+        dt = New BE.DataEngine().Filter("vOperarioCategoriaProf", f)
+        If dt.Rows.Count > 0 Then
+            Return dt(0)("Abreviatura")
+        Else
+            Return 0
+        End If
+    End Function
 
     '    Function Importar()
     '        On Error GoTo Depurar
@@ -601,17 +619,46 @@ TratarError:
                     HorasFacturables = 0
                 End If
 
+                Dim IDCategoriaProfesionalSCCP As Integer
+                Dim IDOficio As String
+
+                IDCategoriaProfesionalSCCP = DevuelveIDCategoriaProfesionalSCCP(Operario)
+                IDOficio = DevuelveIDOficio(Operario)
 
                 txtSQL = "Insert into tbObraMODControl(IdLineaModControl, IdTrabajo, IdObra, CodTrabajo, DescTrabajo, IdTipoTrabajo, " & _
                          "IdSubTipoTrabajo, IdOperario, IdCategoria, IdHora, FechaInicio, HorasRealMod, TasaRealModA, " & _
-                         "ImpRealModA, HorasFactMod, ImpFactModA, DescParte, Facturable, FechaCreacionAudi, FechaModificacionAudi, Usuarioaudi, IdTipoTurno) " & _
+                         "ImpRealModA, HorasFactMod, ImpFactModA, DescParte, Facturable, FechaCreacionAudi, FechaModificacionAudi, Usuarioaudi, IdTipoTurno, IDCategoriaProfesionalSCCP, IDOficio) " & _
                          "Values(" & IdAutonumerico & ", " & IdTrabajo & ", " & IdObra & ", '" & _
                          CodTrabajo & "', '" & DescTrabajo & "', '" & IdTipoTrabajo & "', '" & _
                          IdSubTipoTrabajo & "', '" & Operario & "', 'PREDET', '" & _
                          Tipo_Hora & "', '" & Fecha & "', " & Replace(N_Horas, ",", ".") & _
                          ", " & Replace(Coste_Hora, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
                          ", " & Replace(N_Horas, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
-                         ", '" & sNombreUnico & "', " & HorasFacturables & ", '" & dia & "', '" & dia & "', '" & ExpertisApp.UserName & "', 4)"
+                         ", '" & sNombreUnico & "', " & HorasFacturables & ", '" & dia & "', '" & dia & "', '" & ExpertisApp.UserName & "', 4," & IDCategoriaProfesionalSCCP & ",'" & IDOficio & "')"
+
+                'If IDCategoriaProfesionalSCCP = 2 Or IDCategoriaProfesionalSCCP = 3 Then
+                '    txtSQL = "Insert into tbObraMODControl(IdLineaModControl, IdTrabajo, IdObra, CodTrabajo, DescTrabajo, IdTipoTrabajo, " & _
+                '         "IdSubTipoTrabajo, IdOperario, IdCategoria, IdHora, FechaInicio, HorasRealMod, TasaRealModA, " & _
+                '         "ImpRealModA, HorasFactMod, ImpFactModA, DescParte, Facturable, FechaCreacionAudi, FechaModificacionAudi, Usuarioaudi, IdTipoTurno, IDCategoriaProfesionalSCCP, IDOficio) " & _
+                '         "Values(" & IdAutonumerico & ", " & IdTrabajo & ", " & IdObra & ", '" & _
+                '         CodTrabajo & "', '" & DescTrabajo & "', '" & IdTipoTrabajo & "', '" & _
+                '         IdSubTipoTrabajo & "', '" & Operario & "', 'PREDET', '" & _
+                '         Tipo_Hora & "', '" & Fecha & "', " & Replace(N_Horas, ",", ".") & _
+                '         ", " & Replace(Coste_Hora, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
+                '         ", " & Replace(N_Horas, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
+                '         ", '" & sNombreUnico & "', " & HorasFacturables & ", '" & dia & "', '" & dia & "', '" & ExpertisApp.UserName & "', 4," & IDCategoriaProfesionalSCCP & ",'" & IDOficio & "')"
+                'Else
+                '    txtSQL = "Insert into tbObraMODControl(IdLineaModControl, IdTrabajo, IdObra, CodTrabajo, DescTrabajo, IdTipoTrabajo, " & _
+                '        "IdSubTipoTrabajo, IdOperario, IdCategoria, IdHora, FechaInicio, HorasRealMod, TasaRealModA, " & _
+                '         "ImpRealModA, HorasFactMod, ImpFactModA, DescParte, Facturable, FechaCreacionAudi, FechaModificacionAudi, Usuarioaudi, IdTipoTurno, HorasAdministrativas, IDCategoriaProfesionalSCCP, IDOficio) " & _
+                '         "Values(" & IdAutonumerico & ", " & IdTrabajo & ", " & IdObra & ", '" & _
+                '         CodTrabajo & "', '" & DescTrabajo & "', '" & IdTipoTrabajo & "', '" & _
+                '         IdSubTipoTrabajo & "', '" & Operario & "', 'PREDET', '" & _
+                '         Tipo_Hora & "', '" & Fecha & "', 0 , " & Replace(Coste_Hora, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
+                '         ", 0 , " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
+                '         ", '" & sNombreUnico & "', " & HorasFacturables & ", '" & dia & "', '" & dia & "', '" & ExpertisApp.UserName & "', 4," & Replace(N_Horas, ",", ".") & "," & IDCategoriaProfesionalSCCP & ",'" & IDOficio & "')"
+                'End If
+
                 'Inserto
                 'Conexion.Execute(txtSQL)
                 auto.Ejecutar(txtSQL)
@@ -731,6 +778,18 @@ TratarError:
 
         'End If
     End Sub
+    Public Function DevuelveIDOficio(ByVal IDOperario As String) As String
+        Dim dt As New DataTable
+        Dim f As New Filter
+
+        f.Add("IDOperario", FilterOperator.Equal, IDOperario)
+        dt = New BE.DataEngine().Filter("tbMaestroOperario", f)
+        If dt.Rows.Count > 0 Then
+            Return dt(0)("IDOficio")
+        Else
+            Return ""
+        End If
+    End Function
 
     Private Sub bBorrarExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bBorrarExcel.Click
         Dim numobra As String
@@ -747,7 +806,7 @@ TratarError:
         If numobra = "" Or fechaDesde = "" Or fechaHasta = "" Then
             MsgBox("Introduzca Datos.")
         Else
-            'Comentado por David Velasco 21/3
+            'Comentado por David Velasco 21/3/22
             Dim sql As String
             sql = numobra & " " & fechaDesde & " - " & fechaHasta
             Dim auto As New OperarioCalendario
@@ -757,4 +816,381 @@ TratarError:
 
         'End If
     End Sub
+    'David Velasco 01/06/2023
+    Private Sub bCreaHoras_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bCreaHoras.Click
+        importarExcelPorEmpresa()
+    End Sub
+
+    Public Sub importarExcelPorEmpresa()
+        Dim obraCab As New ObraCabecera
+
+        Dim columna As Integer
+        Dim ruta As String = lblRuta.Text
+        Dim hoja As String = "Horas"
+        Dim rango1 As String = "B1:B10"
+        Dim rango2 As String = "A12:AG100"
+        Dim rango3 As String = "A11:AG11"
+
+        Dim empresa As String
+        Dim estado As String
+        Dim obra As String
+        Dim trabajo As String
+        Dim mes As String
+        Dim numero As String
+        Dim iRegistros As Integer
+        Dim fecha As String
+        Dim idOperario As String
+        Dim basededatos1 As String
+
+        Dim hora As Double
+        Dim tipoHora As String
+
+        Dim sNombreUnicoGlobal As String
+        Dim iSQL As String
+        Dim sSQL As String
+
+        Dim rsnobra As New DataTable
+        Dim rs As New DataTable
+        Dim dtHoras As New DataTable
+        Dim dtDatos As New DataTable
+        Dim dtFecha As New DataTable
+
+        Dim f As New Filter
+        dtDatos = ObtenerDatosExcel(ruta, hoja, rango1)
+        dtHoras = ObtenerDatosExcel(ruta, hoja, rango2)
+        dtFecha = ObtenerDatosExcel(ruta, hoja, rango3)
+
+
+        empresa = dtDatos.Rows(0)(0)
+        estado = dtDatos.Rows(1)(0)
+        obra = dtDatos.Rows(2)(0)
+        trabajo = dtDatos.Rows(3)(0)
+        '01/06/23
+        basededatos1 = dtDatos.Rows(8)(0)
+        mes = dtDatos.Rows(9)(0)
+
+        Dim bbdd As String
+        If Len(basededatos1) = 0 Or basededatos1 = "TECOZAM" Then
+            bbdd = "xTecozam50R2"
+        ElseIf basededatos1 = "FERRALLAS" Then
+            bbdd = "xFerrallas50R2"
+        ElseIf basededatos1 = "DCZ" Then
+            bbdd = "xDrenajesPortugal50R2""
+        ElseIf basededatos1 = "UK" Then
+            bbdd = "xTecozamUnitedKingdom4""
+        ElseIf basededatos1 = "SUECIA" Then
+            bbdd = "xTecozamSuecia4"
+        ElseIf basededatos1 = "NORUEGA" Then
+            bbdd = "xTecozamNoruega4"
+        Else
+            MsgBox("No coincide la empresa con ninguna base de datos habilitada.")
+            Exit Sub
+        End If
+
+        Dim result As DialogResult = MessageBox.Show("¿Deseas aceptar el proceso de insertar horas en " & basededatos1 & " ?", "Confirmación datos", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            'iRegistros = dtHoras.Rows.Count
+            'David Velasco 09/11
+            'Recorro la tabla y en cuanto haya un Codigo de Operario vacio deja de leer.
+            Dim cont As Integer = 0
+            For Each dr As DataRow In dtHoras.Rows
+                If IsDBNull(dr(cont)) Then
+                    'MsgBox("El Excel tiene " & cont & " filas.")
+                    Exit For
+                End If
+                cont += 1
+            Next
+
+            iRegistros = dtHoras.Rows.Count - 1
+            sNombreUnicoGlobal = obra & " " & mes
+
+            If estado <> "REVISADO" Then
+                MsgBox("El estado del archivo es: " & estado & ". Para Importar debe ser 'Revisado'. El proceso se cancelara", vbExclamation + vbOKOnly)
+
+                rs = Nothing
+                DeshacerTraspaso(sNombreUnicoGlobal)
+                If Err.Description <> "" Then
+                    MsgBox("Proceso cancelado. Error: '" & Err.Description & "'", vbCritical + vbOKOnly)
+                End If
+            End If
+
+            f.Clear()
+            f.Add("NObra", FilterOperator.Equal, obra)
+            iSQL = "Nobra= '" & obra & "'"
+
+
+            'rsnobra = New BE.DataEngine().Filter(bbdd & "..tbObraCabecera", f)
+            numero = DevuelveIDObra(bbdd, obra)
+            'rsnobra = obraCab.Filter(f, , "IDObra")
+            'numero = rsnobra(0)("IDObra")
+
+            f.Clear()
+            f.Add("IDObra", FilterOperator.Equal, numero)
+            f.Add("CodTrabajo", FilterOperator.Equal, trabajo)
+
+            sSQL = "IdObra=" & numero & " and Codtrabajo='" & trabajo & "'"
+
+            Dim obraTrabajo As New ObraTrabajo
+
+            rs = New BE.DataEngine().Filter(bbdd & "..tbObraTrabajo", f)
+            'rs = obraTrabajo.Filter(f)
+
+            Dim idtrab As String
+            idtrab = rs(0)("IDTrabajo").ToString
+
+            If rs.Rows.Count > 2 Then
+                MsgBox("Ya hay datos insertados para este parte. Se cancela la importacion", vbCritical + vbOKOnly)
+                sNombreUnicoGlobal = ""
+                rs = Nothing
+                DeshacerTraspaso(sNombreUnicoGlobal)
+                If Err.Description <> "" Then
+                    MsgBox("Proceso cancelado. Error: '" & Err.Description & "'", vbCritical + vbOKOnly)
+                End If
+
+                Exit Sub
+
+            End If
+
+            PvProgreso.Value = 0
+            PvProgreso.Maximum = dtFecha.Columns.Count - 1
+            PvProgreso.Step = 1
+            PvProgreso.Visible = True
+
+            columna = 2
+            'Dim cuenta As Integer = 1
+            'RECORRE LAS COLUMNAS HASTA AG
+            While columna < dtFecha.Columns.Count
+
+                'MessageBox.Show("fecha: " & contador)
+                Try
+                    fecha = dtFecha(0)(columna)
+                Catch ex As Exception
+
+                End Try
+
+
+                For Each drHora As DataRow In dtHoras.Rows
+
+                    'MessageBox.Show("hora: " & cuenta)
+
+                    If Length(drHora(0)) > 0 Then
+                        idOperario = drHora(0)
+                        Windows.Forms.Application.DoEvents()
+                        LProgreso.Text = "Importando : " & idOperario & " - " & fecha
+                        Windows.Forms.Application.DoEvents()
+
+                        If Length(drHora(columna)) > 0 Then
+
+                            If IsNumeric(drHora(columna)) = True Then
+                                hora = drHora(columna)
+                                tipoHora = "HORAS"
+
+                                InsertarPorBaseDeDatos(idOperario, numero, fecha, trabajo, tipoHora, hora, sNombreUnicoGlobal, numero, idtrab, bbdd)
+
+                            Else
+                                hora = 0
+                                tipoHora = drHora(columna)
+                                InsertarPorBaseDeDatos(idOperario, numero, fecha, trabajo, tipoHora, hora, sNombreUnicoGlobal, numero, idtrab, bbdd)
+                            End If
+                            'cuenta = cuenta + 1
+                        Else
+                            'cuenta = cuenta + 1
+                            Continue For
+                        End If
+                    Else
+                        Exit For
+                    End If
+
+                Next
+                columna = columna + 1
+
+                If columna < dtFecha.Columns.Count Then
+                    PvProgreso.Value = columna
+                End If
+
+
+            End While
+            If (PvProgreso.Value.Equals(dtFecha.Columns.Count - 1)) Then
+                MsgBox("Se han insertado las filas correctamente.")
+            End If
+        Else
+            Exit Sub
+        End If
+    End Sub
+
+    Sub InsertarPorBaseDeDatos(ByVal Operario As String, ByVal IdObra As String, ByVal Fecha As Date, ByVal cboTrabajo As String, ByVal sTipoHora As String, ByVal N_Horas As Double, ByVal sNombreUnico As String, ByVal numero As String, ByVal idtrab As String, ByVal bbdd As String)
+
+        Dim obj As New Operario
+        Dim txtSQL As String
+        Dim rs As New DataTable
+        Dim rsTrabajo As New DataTable
+        Dim rsOperario As New DataTable
+        Dim rsCalendarioCentro As New DataTable
+        Dim IdOperacion As String
+        Dim CodTrabajo As String
+        Dim DescTrabajo As String
+        Dim IdTipoTrabajo As String
+        Dim IdSubTipoTrabajo As Object
+        Dim iVeces As Long
+        Dim Coste_Hora As Double
+        Dim Tipo_Hora As String
+        Dim I As Long
+        Dim IdAutonumerico As Long
+        Dim HorasFacturables As Integer
+        Dim IdTrabajo As Double
+        Dim HorasOrigen As Double
+        Dim dia As String
+        dia = Date.Now.Date
+        Dim f As New Filter
+
+        'Antes de insertar compruebo si existe el Operario
+        f.Add("IdOperario", FilterOperator.Equal, Operario)
+        rs = New BE.DataEngine().Filter(bbdd & "..tbMaestroOperario", f)
+
+        If rs.Rows.Count = 0 Then
+            MsgBox("El operario: '" & Operario & "' no existe en la BBDD. Todo el proceso se cancelara", vbExclamation + vbOKOnly)
+            iVeces = "Error Provocado"
+        End If
+
+        rs = Nothing
+
+        IdOperacion = "Guardar Datos"
+        HorasOrigen = N_Horas
+        Dim objTrabajo As New ObraTrabajo
+        Dim filtro2 As New Filter
+        Dim filtro3 As New Filter
+        'Guardos los datos
+        If IdOperacion = "Guardar Datos" Then
+
+            'txtSQL = "Select IdTrabajo, CodTrabajo, DescTrabajo, IdTipoTrabajo, IdSubtipoTrabajo from tbObraTrabajo where IdObra=" & numero & " and Codtrabajo='" & cboTrabajo & "'"
+            filtro2.Add("IDObra", FilterOperator.Equal, numero)
+            filtro2.Add("IdTrabajo", FilterOperator.Equal, idtrab)
+            rsTrabajo = New BE.DataEngine().Filter(bbdd & "..tbObraTrabajo", filtro2)
+            'rsTrabajo = objTrabajo.Filter(filtro2, , "IdTrabajo, CodTrabajo, DescTrabajo, IdTipoTrabajo, IdSubtipoTrabajo")
+
+            If rsTrabajo.Rows.Count = 0 Then
+                IdTrabajo = Nothing
+                CodTrabajo = ""
+                DescTrabajo = ""
+                IdTipoTrabajo = Nothing
+                IdSubTipoTrabajo = Nothing
+            Else
+                IdTrabajo = rsTrabajo.Rows(0)("IdTrabajo")
+                CodTrabajo = rsTrabajo.Rows(0)("CodTrabajo")
+                DescTrabajo = rsTrabajo.Rows(0)("DescTrabajo")
+                IdTipoTrabajo = rsTrabajo.Rows(0)("IdTipoTrabajo")
+                IdSubTipoTrabajo = rsTrabajo.Rows(0)("IdSubtipotrabajo")
+            End If
+
+            'Obtengo datos del Operario
+            'txtSQL = "Select Jornada_Laboral, c_h_n, c_h_x, c_h_e from tbMaestroOperario where idoperario='" & Operario & "'"
+            'rsOperario = Conexion.Execute(txtSQL)
+            filtro3.Add("IDOperario", FilterOperator.Equal, Operario)
+            rsOperario = New BE.DataEngine().Filter(bbdd & "..tbMaestroOperario", filtro3)
+
+            'rsOperario = obj.Filter(f, , "Jornada_Laboral, c_h_n, c_h_x, c_h_e")
+
+            'Compruebo en el calendario
+            'txtSQL = "Select * from tbCalendarioCentro where idcentro='" & numero & "' and Fecha='" & Fecha & "' and tipodia=1"
+            'rsCalendarioCentro = Conexion.Execute(txtSQL)
+            Dim calendario As New General.CalendarioCentro
+            Dim filtro As New Filter
+            'Se pone por defecto 100. Para que no haga falta crear el calendario centro siempre que se cree obra.
+            '100 es vegas altas. Para que no haya errores.David velasco 06/05/22
+            'Antes ponia numero en vez de vegas
+            Dim vegas As String
+            vegas = "100"
+            filtro.Add("Fecha", FilterOperator.Equal, Fecha)
+            filtro.Add("IDCentro", FilterOperator.Equal, vegas)
+            filtro.Add("TipoDia", FilterOperator.Equal, 1)
+
+            rsCalendarioCentro = New BE.DataEngine().Filter("xTecozam50R2..tbCalendarioCentro", filtro)
+
+            'David 15/11/21 En vez de <>0 ponia "=0"
+            'Si tiene datos es que es festivo
+            If rsCalendarioCentro.Rows.Count <> 0 Then
+                iVeces = 1
+                N_Horas = N_Horas
+                Coste_Hora = rsOperario.Rows(0)("c_h_e")
+                Tipo_Hora = "HE"
+            Else
+                'Si no es festivo
+                If rsOperario.Rows(0)("Jornada_Laboral") >= N_Horas Then
+                    'Todas son horas normales
+                    iVeces = 1
+                    N_Horas = N_Horas
+                    Coste_Hora = rsOperario.Rows(0)("c_h_n")
+                    Tipo_Hora = "HO"
+                Else
+                    'Hay horas normales y horas extras, primero pongo las horas normales
+                    iVeces = 2
+                    Coste_Hora = rsOperario.Rows(0)("c_h_n")
+                    N_Horas = rsOperario.Rows(0)("Jornada_Laboral")
+                    Tipo_Hora = "HO"
+                End If
+            End If
+
+            'Tipo de hora que se inserta
+            If sTipoHora <> "HORAS" Then
+                Tipo_Hora = sTipoHora
+                iVeces = 1
+            End If
+
+            For I = 1 To iVeces
+                Dim auto As New OperarioCalendario
+                IdAutonumerico = auto.Autonumerico()
+
+                'Horas Facturables
+                If Trim(DescTrabajo) = "HORAS FACTURABLES" Then
+                    HorasFacturables = 1
+                Else
+                    HorasFacturables = 0
+                End If
+
+                Dim IDCategoriaProfesionalSCCP As Integer
+                Dim IDOficio As String = ""
+
+                'IDCategoriaProfesionalSCCP = DevuelveIDCategoriaProfesionalSCCP(Operario)
+                'IDOficio = DevuelveIDOficio(Operario)
+
+                txtSQL = "Insert into " & bbdd & " ..tbObraMODControl(IdLineaModControl, IdTrabajo, IdObra, CodTrabajo, DescTrabajo, IdTipoTrabajo, " & _
+                         "IdSubTipoTrabajo, IdOperario, IdCategoria, IdHora, FechaInicio, HorasRealMod, TasaRealModA, " & _
+                         "ImpRealModA, HorasFactMod, ImpFactModA, DescParte, Facturable, FechaCreacionAudi, FechaModificacionAudi, Usuarioaudi, IdTipoTurno, IDCategoriaProfesionalSCCP, IDOficio) " & _
+                         "Values(" & IdAutonumerico & ", " & IdTrabajo & ", " & IdObra & ", '" & _
+                         CodTrabajo & "', '" & DescTrabajo & "', '" & IdTipoTrabajo & "', '" & _
+                         IdSubTipoTrabajo & "', '" & Operario & "', 'PREDET', '" & _
+                         Tipo_Hora & "', '" & Fecha & "', " & Replace(N_Horas, ",", ".") & _
+                         ", " & Replace(Coste_Hora, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
+                         ", " & Replace(N_Horas, ",", ".") & ", " & Replace(Round(CDbl(Coste_Hora) * CDbl(N_Horas), 2), ",", ".") & _
+                         ", '" & sNombreUnico & "', " & HorasFacturables & ", '" & dia & "', '" & dia & "', '" & ExpertisApp.UserName & "', 4," & Nz(IDCategoriaProfesionalSCCP, "") & ",'" & Nz(IDOficio, "") & "')"
+
+                'Inserto
+                'Conexion.Execute(txtSQL)
+                auto.Ejecutar(txtSQL)
+
+                'Cambio valores, pongo las horas extras
+                Coste_Hora = rsOperario.Rows(0)("c_h_x")
+                N_Horas = CDbl(HorasOrigen) - CDbl(rsOperario.Rows(0)("Jornada_Laboral"))
+                Tipo_Hora = "HX"
+            Next
+            'Libero memoria
+            'Conexion = Nothing
+            rs = Nothing
+            rsTrabajo = Nothing
+            rsOperario = Nothing
+            rsCalendarioCentro = Nothing
+        End If
+    End Sub
+
+    Public Function DevuelveIDObra(ByVal bbdd As String, ByVal NObra As String) As String
+        Dim dtObra As New DataTable
+
+        Dim filtro As New Filter
+        Dim sql2 As String
+
+        sql2 = "Select * from xTecozamUnitedKingdom4..tbObraCabecera where NObra='" & NObra & "'"
+        dtObra = aux.EjecutarSqlSelect(sql2)
+
+        Return dtObra.Rows(0)("IDObra")
+    End Function
 End Class

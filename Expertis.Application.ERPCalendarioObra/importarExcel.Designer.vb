@@ -34,6 +34,7 @@ Partial Class importarExcel
         Me.borrahoras = New Solmicro.Expertis.Engine.UI.Button
         Me.CD = New System.Windows.Forms.OpenFileDialog
         Me.bBorrarExcel = New Solmicro.Expertis.Engine.UI.Button
+        Me.bCreaHoras = New Solmicro.Expertis.Engine.UI.Button
         Me.SuspendLayout()
         '
         'Label1
@@ -106,11 +107,11 @@ Partial Class importarExcel
         'borrahoras
         '
         Me.borrahoras.Icon = CType(resources.GetObject("borrahoras.Icon"), System.Drawing.Icon)
-        Me.borrahoras.Location = New System.Drawing.Point(191, 381)
+        Me.borrahoras.Location = New System.Drawing.Point(777, 22)
         Me.borrahoras.Name = "borrahoras"
-        Me.borrahoras.Size = New System.Drawing.Size(162, 38)
+        Me.borrahoras.Size = New System.Drawing.Size(162, 53)
         Me.borrahoras.TabIndex = 5
-        Me.borrahoras.Text = "Borrar(Por App y por Excel)"
+        Me.borrahoras.Text = "Borrar (Por App y por Excel)"
         Me.borrahoras.Visible = False
         '
         'CD
@@ -126,11 +127,22 @@ Partial Class importarExcel
         Me.bBorrarExcel.TabIndex = 6
         Me.bBorrarExcel.Text = "Borrar horas"
         '
+        'bCreaHoras
+        '
+        Me.bCreaHoras.Icon = CType(resources.GetObject("bCreaHoras.Icon"), System.Drawing.Icon)
+        Me.bCreaHoras.Location = New System.Drawing.Point(191, 381)
+        Me.bCreaHoras.Name = "bCreaHoras"
+        Me.bCreaHoras.Size = New System.Drawing.Size(571, 53)
+        Me.bCreaHoras.TabIndex = 7
+        Me.bCreaHoras.Text = "CREAR HORAS OTRA BASE DE DATOS"
+        Me.bCreaHoras.Visible = False
+        '
         'importarExcel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(951, 459)
+        Me.Controls.Add(Me.bCreaHoras)
         Me.Controls.Add(Me.bBorrarExcel)
         Me.Controls.Add(Me.borrahoras)
         Me.Controls.Add(Me.btnSalir)
@@ -158,4 +170,5 @@ Partial Class importarExcel
     Friend WithEvents borrahoras As Solmicro.Expertis.Engine.UI.Button
     Friend WithEvents CD As System.Windows.Forms.OpenFileDialog
     Friend WithEvents bBorrarExcel As Solmicro.Expertis.Engine.UI.Button
+    Friend WithEvents bCreaHoras As Solmicro.Expertis.Engine.UI.Button
 End Class
