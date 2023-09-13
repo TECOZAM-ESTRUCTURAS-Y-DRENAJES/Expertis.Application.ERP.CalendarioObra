@@ -62,7 +62,7 @@ Partial Class importarExcel
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(31, 226)
+        Me.Label3.Location = New System.Drawing.Point(31, 185)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(105, 13)
         Me.Label3.TabIndex = 3
@@ -71,7 +71,7 @@ Partial Class importarExcel
         'lblRuta
         '
         Me.lblRuta.AutoSize = False
-        Me.lblRuta.Location = New System.Drawing.Point(188, 226)
+        Me.lblRuta.Location = New System.Drawing.Point(185, 185)
         Me.lblRuta.Name = "lblRuta"
         Me.lblRuta.Size = New System.Drawing.Size(574, 38)
         Me.lblRuta.TabIndex = 4
@@ -80,7 +80,7 @@ Partial Class importarExcel
         'cmdUbicacion
         '
         Me.cmdUbicacion.Icon = CType(resources.GetObject("cmdUbicacion.Icon"), System.Drawing.Icon)
-        Me.cmdUbicacion.Location = New System.Drawing.Point(784, 226)
+        Me.cmdUbicacion.Location = New System.Drawing.Point(790, 185)
         Me.cmdUbicacion.Name = "cmdUbicacion"
         Me.cmdUbicacion.Size = New System.Drawing.Size(120, 38)
         Me.cmdUbicacion.TabIndex = 5
@@ -89,7 +89,7 @@ Partial Class importarExcel
         'btnAceptar
         '
         Me.btnAceptar.Icon = CType(resources.GetObject("btnAceptar.Icon"), System.Drawing.Icon)
-        Me.btnAceptar.Location = New System.Drawing.Point(191, 296)
+        Me.btnAceptar.Location = New System.Drawing.Point(191, 239)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(120, 38)
         Me.btnAceptar.TabIndex = 5
@@ -98,7 +98,7 @@ Partial Class importarExcel
         'btnSalir
         '
         Me.btnSalir.Icon = CType(resources.GetObject("btnSalir.Icon"), System.Drawing.Icon)
-        Me.btnSalir.Location = New System.Drawing.Point(642, 296)
+        Me.btnSalir.Location = New System.Drawing.Point(642, 239)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(120, 38)
         Me.btnSalir.TabIndex = 5
@@ -121,7 +121,7 @@ Partial Class importarExcel
         'bBorrarExcel
         '
         Me.bBorrarExcel.Icon = CType(resources.GetObject("bBorrarExcel.Icon"), System.Drawing.Icon)
-        Me.bBorrarExcel.Location = New System.Drawing.Point(405, 296)
+        Me.bBorrarExcel.Location = New System.Drawing.Point(405, 239)
         Me.bBorrarExcel.Name = "bBorrarExcel"
         Me.bBorrarExcel.Size = New System.Drawing.Size(165, 38)
         Me.bBorrarExcel.TabIndex = 6
@@ -130,12 +130,11 @@ Partial Class importarExcel
         'bCreaHoras
         '
         Me.bCreaHoras.Icon = CType(resources.GetObject("bCreaHoras.Icon"), System.Drawing.Icon)
-        Me.bCreaHoras.Location = New System.Drawing.Point(191, 381)
+        Me.bCreaHoras.Location = New System.Drawing.Point(191, 324)
         Me.bCreaHoras.Name = "bCreaHoras"
         Me.bCreaHoras.Size = New System.Drawing.Size(571, 53)
         Me.bCreaHoras.TabIndex = 7
         Me.bCreaHoras.Text = "CREAR HORAS OTRA BASE DE DATOS"
-        Me.bCreaHoras.Visible = False
         '
         'importarExcel
         '

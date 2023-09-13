@@ -44,3 +44,14 @@ C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Ex
 C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.dll
 C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.pdb
 C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.CalendarioObra.xml
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\ResolveAssemblyReference.cache
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.CalendarioObra.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.frmBorrarHr.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.frmHistoricoCalendario.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.frmObservaciones.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.importarExcel.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Solmicro.Expertis.Application.ERP.CalendarioObra.Resources.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERPCalendarioObra.vbproj.GenerateResource.Cache
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERP.CalendarioObra.dll
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERP.CalendarioObra.xml
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.CalendarioObra\Expertis.Application.ERPCalendarioObra\obj\Release\Expertis.Application.ERP.CalendarioObra.pdb
