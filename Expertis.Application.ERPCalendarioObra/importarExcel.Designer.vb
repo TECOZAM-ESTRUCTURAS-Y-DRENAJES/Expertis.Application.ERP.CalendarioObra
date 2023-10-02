@@ -135,6 +135,7 @@ Partial Class importarExcel
         Me.bCreaHoras.Size = New System.Drawing.Size(571, 53)
         Me.bCreaHoras.TabIndex = 7
         Me.bCreaHoras.Text = "CREAR HORAS OTRA BASE DE DATOS"
+        Me.bCreaHoras.Visible = False
         '
         'importarExcel
         '
