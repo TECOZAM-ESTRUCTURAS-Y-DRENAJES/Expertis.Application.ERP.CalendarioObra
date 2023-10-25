@@ -815,7 +815,24 @@ Public Class CalendarioObra
                 Else
                     sCodigo = ""
                 End If
+                '-----------David Velasco 23/10/23
+                'Si no quiero que se muestre en calendario obra las horas adminis o de baja
+                Dim dtAccOCC As DataTable
+                Dim filtro As New Filter
+                Dim bandera As Boolean = 0
+                filtro.Add("IDOperario", FilterOperator.Equal, dr("IDOperario"))
+                filtro.Add("FechaInicio", FilterOperator.Equal, dr("FechaInicio"))
+                dtAccOCC = New BE.DataEngine().Filter("tbObraModControl", filtro)
+                For Each fila As DataRow In dtAccOCC.Rows
+                    If fila("IDHora") = "HA" Or fila("IDHora") = "HB" Then
+                        bandera = 1
+                    End If
+                Next
 
+                If bandera Then
+                    Continue For
+                End If
+                '-----------FIN DAVID 23/10
                 If dr("FechaInicio") = dFechaAnterior Then
                     I = I + 1
                 Else
@@ -825,7 +842,7 @@ Public Class CalendarioObra
                 ''''''''''SUSTITUYE A LOS SELECT CASE'''''''''''
 
                 Dim etiquetas() As Windows.Forms.Label = {lbl0, lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8, lbl9, lbl10, lbl11, lbl12, lbl13, lbl14, lbl15, lbl16, lbl17, lbl18, lbl19, lbl20, lbl21, lbl22, lbl23, lbl24, lbl25, lbl26, lbl27, lbl28, lbl29, lbl30}
-                Select Day(dr("FechaInicio"))
+                Select Case Day(dr("FechaInicio"))
                     Case 21
                         Select Case I
                             Case 0
@@ -1617,7 +1634,7 @@ Public Class CalendarioObra
     Function Guardar()
         'Dim SQLHistorico As String
         Dim txtSQL As String
-        Dim dt As DataTable
+        Dim dt As New DataTable
         'Dim rs As New Recordset
         Dim sTexto As String = ""
         Dim DE As New Expertis.Engine.BE.DataEngine
@@ -1631,14 +1648,14 @@ Public Class CalendarioObra
         End If
 
         Dim FilHist As New Filter
-        FilHist.Add("IDOPerario", FilterOperator.Equal, advOperario1.Value)
+        FilHist.Add("IdOperario", FilterOperator.Equal, advOperario1.Value)
         FilHist.Add("Mes", FilterOperator.Equal, cbxMes.Value)
         FilHist.Add("anyo", FilterOperator.Equal, cbxAnyo.Value)
 
         txtSQL = "idoperario='" & advOperario1.Value & "' and Mes=" & cbxMes.Value & _
                  " and anyo=" & cbxAnyo.Value & ""
         dt = DE.Filter("tbOperarioCalendario", FilHist)
-
+        
         Dim clsOP As New OperarioCalendario
 
 
